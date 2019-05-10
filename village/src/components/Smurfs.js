@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import Smurf from './Smurf'
 
@@ -8,21 +9,24 @@ class Smurfs extends Component {
       <div className="Smurfs">
         <h1>Smurf Village</h1>
         <ul>
-          {this.props.smurfs.map(smurf => {
-            return (
-              <Smurf
-                name={smurf.name}
-                id={smurf.id}
-                age={smurf.age}
-                height={smurf.height}
-                key={smurf.id}
-              />
-            )
-          })}
+          {this.props.smurfs.map(renderSmurf)}
         </ul>
       </div>
     )
   }
+}
+
+function renderSmurf(smurf) {
+  return (
+    <Link to={`/smurfs/${smurf.id}`}>
+      <Smurf
+        name={smurf.name}
+        id={smurf.id}
+        age={smurf.age}
+        height={smurf.height}
+      />
+    </Link>
+  )
 }
 
 Smurf.defaultProps = {
