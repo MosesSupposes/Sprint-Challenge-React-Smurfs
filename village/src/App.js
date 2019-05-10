@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 
 import './App.css'
 
@@ -36,6 +36,10 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <nav>
+          <NavLink to="/">Back to the village!</NavLink>
+          <NavLink to="/smurf-form">Add new villager</NavLink>
+        </nav>
         <Route exact path="/" render={(props) => (
           <Smurfs smurfs={this.state.smurfs} {...props} />
         )} />
