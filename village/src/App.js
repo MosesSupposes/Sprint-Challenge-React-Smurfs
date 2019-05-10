@@ -10,9 +10,14 @@ class App extends Component {
     this.state = {
       smurfs: [],
     }
+    this.gatherVillage = this.gatherVillage.bind(this)
   }
 
   componentDidMount() {
+    this.gatherVillage()
+  }
+
+  gatherVillage() {
     axios.get('http://localhost:3333/smurfs')
       .then(res => {
         this.setState({
@@ -28,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm gatherVillage={this.gatherVillage} />
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     )
