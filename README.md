@@ -29,8 +29,28 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
+    Client and server side routing both handle the navigation of a website/ web app. 
+  They both have their pros and cons. Some of the advantages of server side routing include better support 
+  for search engine optimization and ease of development (it's more rudimentary). One of the tradeoffs you 
+  make by handling routing on the server is in efficiency. Every time a request for a new webpage is made,
+  the whole page gets thrown away and then refreshed with a new one. This can be pretty inefficient in cases
+  where most of your data is static (like the header and footer of your site), but only a small portion of your 
+  content needed updating. 
+    Two advantages to handling routing on the client side are overall faster routing -- due to the fact that less
+  data needs to be processed -- and smooth transitions and animations between views are easier to implement.
+  A couple of disadvantages are slower initial loading times due to the fact that the whole website or web-application needs to be loaded on the first request. Also, it requires more setup work or even a library. Because server-side is the standard, extra code must be written to make client-side routing possible. And lastly,
+  the search engine optimation for SPAs is fairly lacking compared to the amount of optimization that goes into
+  traditional server side routed sites/apps.
+
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+  Create - POST
+  Read - GET
+  Update - PUT
+  Delete - DELETE
+
 - [ ] Mention three tools we can use to make AJAX requests.
+  XML Http Requests, the new fetch API, and axios.
 
 
 ## Project Set Up
