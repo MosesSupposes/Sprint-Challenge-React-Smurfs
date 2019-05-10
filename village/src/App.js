@@ -6,6 +6,7 @@ import './App.css'
 
 import SmurfForm from './components/SmurfForm'
 import Smurfs from './components/Smurfs'
+import Smurf from './components/Smurf'
 
 class App extends Component {
   constructor(props) {
@@ -40,11 +41,17 @@ class App extends Component {
           <NavLink to="/">Back to the village!</NavLink>
           <NavLink to="/smurf-form">Add new villager</NavLink>
         </nav>
+
         <Route exact path="/" render={(props) => (
           <Smurfs smurfs={this.state.smurfs} {...props} />
         )} />
+
         <Route path="/smurf-form" render={(props) => (
           <SmurfForm gatherVillage={this.gatherVillage} {...props} />
+        )} />
+
+        <Route path="/smurfs/:id" render={(props) => (
+          <Smurf smurfs={this.state.smurfs} {...props} />
         )} />
       </main>
     )
