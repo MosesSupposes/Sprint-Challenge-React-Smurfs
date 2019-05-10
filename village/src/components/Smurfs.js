@@ -18,7 +18,7 @@ class Smurfs extends Component {
 
 function renderSmurf(smurf) {
   return (
-    <Link to={`/smurfs/${smurf.id}`}>
+    <Link to={`/smurfs/${smurf.id}`} key={smurf.id}>
       <Smurf
         name={smurf.name}
         id={smurf.id}
